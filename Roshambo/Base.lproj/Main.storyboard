@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-OG-yTb">
+                                <rect key="frame" x="158" y="407.5" width="98" height="81"/>
+                                <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ou-wX-OC4" userLabel="PaperButton">
+                                        <rect key="frame" x="24.5" y="0.0" width="49" height="35.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="paper"/>
+                                        <connections>
+                                            <action selector="optionSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yhM-uM-3NU"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vq5-Om-ecp">
+                                        <rect key="frame" x="0.0" y="45.5" width="98" height="35.5"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUc-sZ-ekm" userLabel="RockButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="35.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="rock"/>
+                                                <connections>
+                                                    <action selector="optionSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ls-qr-QSE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvb-z5-Trv" userLabel="ScissorsButton">
+                                                <rect key="frame" x="49" y="0.0" width="49" height="35.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="scissors"/>
+                                                <connections>
+                                                    <action selector="optionSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBq-x7-lFV"/>
+                                                    <segue destination="76l-oy-0SK" kind="presentation" identifier="test" id="gCd-FP-X66"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="let's Play!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVc-5Z-MiT">
+                                <rect key="frame" x="132" y="771" width="150.5" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RNa-OG-yTb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Nh-de-Bfr"/>
+                            <constraint firstItem="RNa-OG-yTb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Pf-wI-j83"/>
+                            <constraint firstItem="UVc-5Z-MiT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bRw-PS-nEa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UVc-5Z-MiT" secondAttribute="bottom" constant="50" id="u2I-mb-IeN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="paperButton" destination="6ou-wX-OC4" id="A0a-Ub-BNK"/>
+                        <outlet property="rockButton" destination="pUc-sZ-ekm" id="Xsd-PK-eFh"/>
+                        <outlet property="scissorsButton" destination="zvb-z5-Trv" id="eiZ-jf-nDk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142" y="-179"/>
+        </scene>
+        <!--Rock View Controller-->
+        <scene sceneID="Aya-es-ASK">
+            <objects>
+                <viewController storyboardIdentifier="RockViewController" id="76l-oy-0SK" customClass="RockViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wUw-wo-D7D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XE4-9q-CNU">
+                                <rect key="frame" x="82" y="104" width="250" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1hF-B5-U2N">
+                                        <rect key="frame" x="25" y="0.0" width="200" height="159.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scissors Cut Paper. You win!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMi-ex-Qo2">
+                                        <rect key="frame" x="17.5" y="179.5" width="215.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1sS-3K-bWI"/>
+                                    <constraint firstAttribute="width" constant="250" id="o3v-0U-4bw"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhh-ug-e6R">
+                                <rect key="frame" x="124" y="743" width="166" height="49"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play Again">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playAgain" destination="76l-oy-0SK" eventType="touchUpInside" id="soq-JX-soL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KDv-28-CVA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KDv-28-CVA" firstAttribute="bottom" secondItem="Zhh-ug-e6R" secondAttribute="bottom" constant="50" id="bfe-TU-hjL"/>
+                            <constraint firstItem="Zhh-ug-e6R" firstAttribute="centerX" secondItem="wUw-wo-D7D" secondAttribute="centerX" id="iyZ-Kq-bSG"/>
+                            <constraint firstItem="XE4-9q-CNU" firstAttribute="top" secondItem="KDv-28-CVA" secondAttribute="top" constant="60" id="kOo-6H-Lil"/>
+                            <constraint firstItem="XE4-9q-CNU" firstAttribute="centerX" secondItem="wUw-wo-D7D" secondAttribute="centerX" id="whc-G0-aKe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameStatusLabel" destination="UMi-ex-Qo2" id="rLW-Yk-cpE"/>
+                        <outlet property="rockImage" destination="1hF-B5-U2N" id="0cM-iF-vVW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H43-7S-vKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="-179"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="paper" width="25" height="21.5"/>
+        <image name="rock" width="25" height="21.5"/>
+        <image name="scissors" width="25" height="21.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
